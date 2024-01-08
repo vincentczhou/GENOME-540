@@ -1,3 +1,13 @@
+# General
+*
+!/**/
+!*.*
+
+.vscode
+
+*.fa
+*.fna
+
 # Prerequisites
 *.d
 

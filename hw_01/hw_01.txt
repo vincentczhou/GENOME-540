@@ -1,0 +1,492 @@
+Assignment: GS 540 HW1
+Name: Vincent Chau
+Email: vkchau@uw.edu
+Language: C++17
+Runtime: 1m7.110s
+
+Fasta 1: hg38_chr10_90Mb_100Mb.fa
+Non-alphabetic characters: 1145
+>chr10:90000000-100000000
+*=10000000
+A=2920816
+C=2082691
+G=2074676
+T=2921817
+N=0
+
+Fasta 2: mm39_chr19_35Mb_45Mb.fa
+Non-alphabetic characters: 1145
+>chr19:35000000-45000000
+*=10000000
+A=2855850
+C=2156699
+G=2155984
+T=2831467
+N=0
+
+Match Length Histogram:
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1237
+9 36994
+10 292062
+11 1563618
+12 3344479
+13 2544731
+14 1175212
+15 473460
+16 199701
+17 103539
+18 63432
+19 44217
+20 32144
+21 23637
+22 18235
+23 13597
+24 10839
+25 8950
+26 6927
+27 5272
+28 4331
+29 3772
+30 3058
+31 2588
+32 2188
+33 1863
+34 1644
+35 1447
+36 1235
+37 1143
+38 1037
+39 941
+40 879
+41 824
+42 743
+43 706
+44 647
+45 572
+46 531
+47 496
+48 447
+49 407
+50 370
+51 330
+52 319
+53 291
+54 272
+55 256
+56 241
+57 223
+58 212
+59 201
+60 189
+61 189
+62 183
+63 165
+64 153
+65 143
+66 132
+67 125
+68 111
+69 104
+70 90
+71 84
+72 81
+73 86
+74 80
+75 76
+76 71
+77 65
+78 63
+79 60
+80 58
+81 54
+82 48
+83 48
+84 45
+85 44
+86 43
+87 40
+88 37
+89 36
+90 33
+91 33
+92 31
+93 30
+94 29
+95 28
+96 28
+97 27
+98 24
+99 23
+100 21
+101 21
+102 20
+103 19
+104 18
+105 17
+106 14
+107 14
+108 12
+109 12
+110 11
+111 11
+112 11
+113 10
+114 10
+115 10
+116 8
+117 8
+118 8
+119 7
+120 7
+121 7
+122 7
+123 6
+124 6
+125 6
+126 6
+127 6
+128 5
+129 5
+130 5
+131 5
+132 5
+133 5
+134 5
+135 5
+136 5
+137 5
+138 5
+139 5
+140 5
+141 5
+142 4
+143 3
+144 3
+145 3
+146 3
+147 3
+148 3
+149 3
+150 3
+151 3
+152 3
+153 3
+154 3
+155 3
+156 3
+157 3
+158 3
+159 3
+160 3
+161 3
+162 3
+163 3
+164 3
+165 2
+166 1
+167 1
+168 1
+169 1
+170 1
+171 1
+172 1
+173 1
+174 1
+175 1
+176 1
+177 1
+178 1
+179 1
+180 1
+181 1
+182 1
+183 1
+184 1
+185 1
+186 1
+187 1
+188 1
+189 1
+190 1
+191 1
+192 1
+193 1
+194 1
+195 1
+196 1
+197 1
+198 1
+199 1
+200 1
+201 1
+202 1
+203 1
+204 1
+205 1
+206 1
+207 1
+208 1
+209 1
+210 1
+211 1
+212 1
+213 1
+214 1
+215 1
+216 1
+217 1
+
+The longest match length: 217
+Number of match strings: 1
+
+Match string: GTGGTTATGAGTGGAAAAATGAGTGTTTCCAAAGCTCAGAGTATTTATGGGATTCCCCACAGTACACTGGAGTACAAAGTAAAGGAGAGGCTGGGCACTTTGAAAAACCCTCCAAAGAAAAAGATGAAATTAATGAGGTCGGAGGGGCCAGATGTTTCTGTAAAGATTGAATTAGATCCCCAGGGAGAGGCAGCACAAAGTGCAAATGAATCAAAAA
+Description: This sequence comes from a LCOR (ligand-dependent corepressor) gene
+
+Fasta: hg38_chr10_90Mb_100Mb.fa
+Position: 6955698
+Strand: forward
+
+Fasta: mm39_chr19_35Mb_45Mb.fa
+Position: 6547495
+Strand: forward
+
+
+Program:
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct Suffix {
+    string_view s;
+    int i;
+    int group;
+};
+
+bool lexico(const Suffix &a, const Suffix &b) { return a.s < b.s; }
+
+template <size_t N>
+vector<Suffix> sufArr(array<int, N> &seqLens, string &fSeq) {
+    vector<Suffix> sa;
+    int fSeqLen = fSeq.length();
+    sa.reserve(fSeqLen);
+    int gNum = seqLens[0];
+    int group = 0;
+    const char *pfSeq = fSeq.data();
+    for (int i = 0; i < fSeqLen; i++) {
+        string_view suffix = string_view(pfSeq + i, fSeqLen - i);
+        Suffix curr = {suffix, i, group};
+        sa.push_back(curr);
+        if (i == gNum) {
+            gNum += seqLens[++group] + 1;
+        }
+    }
+    sort(sa.begin(), sa.end(), lexico);
+    return sa;
+}
+
+int cMatch(string_view a, string_view b) {
+    int match = 0;
+    for (int i = 0; i < min(a.length(), b.length()); i++) {
+        if (a.at(i) == b.at(i) && a.at(i) != '$') {
+            match++;
+        } else {
+            break;
+        }
+    }
+    return match;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    freopen("output.txt", "w", stdout);
+    // const char *inputs[2] = {"input/CP001872.fna", "input/CP003913.fna"};
+    const char *inputs[2] = {"input/hg38_chr10_90Mb_100Mb.fa",
+                             "input/mm39_chr19_35Mb_45Mb.fa"};
+    array<string, size(inputs)> inputNames;
+    for (int i = 0; i < inputNames.size(); i++) {
+        string inputString = string(inputs[i]);
+        inputNames[i] = inputString.substr(inputString.find('/') + 1);
+    }
+
+    // Concatenate Genomic Sequences
+    int a = 0, t = 0, g = 0, c = 0, n = 0, f = 0;
+    array<string, size(inputs) + 1> sequences;
+    array<int, size(inputs) + 1> seqLens;
+    int counter = 0;
+    for (const char *input : inputs) {
+        cin.clear();
+        freopen(input, "r", stdin);
+        // cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        string header;
+        getline(cin, header, '\n');
+        string line;
+        while (cin >> line) {
+            int linLen = line.length();
+            transform(line.begin(), line.end(), line.begin(), ::toupper);
+            if (isdigit(line[0])) {
+                f += linLen;
+            } else {
+                for (int i = 0; i < linLen; i++) {
+                    char nucleotide = line[i];
+                    switch (nucleotide) {
+                        case 'A':
+                            a++;
+                            break;
+                        case 'T':
+                            t++;
+                            break;
+                        case 'G':
+                            g++;
+                            break;
+                        case 'C':
+                            c++;
+                            break;
+                        case 'N':
+                            n++;
+                            break;
+                    }
+                }
+                sequences[counter] += line;
+            }
+        }
+        seqLens[counter] = sequences[counter].length();
+
+        cout << "Fasta " + to_string(counter + 1) + ": " + inputNames[counter]
+             << '\n';
+        cout << "Non-alphabetic characters: " << f << '\n';
+        cout << header << '\n';
+        cout << "*=" << a + c + g + t + n << '\n';
+        cout << "A=" << a << '\n';
+        cout << "C=" << c << '\n';
+        cout << "G=" << g << '\n';
+        cout << "T=" << t << '\n';
+        cout << "N=" << n << '\n';
+        cout << '\n';
+        a = 0, t = 0, g = 0, c = 0, n = 0, f = 0;
+
+        counter++;
+    }
+
+    string rRev(sequences[counter - 1]);
+    reverse(rRev.begin(), rRev.end());
+    transform(rRev.begin(), rRev.end(), rRev.begin(), [](char ch) {
+        switch (ch) {
+            case 'A':
+                return 'T';
+            case 'T':
+                return 'A';
+            case 'G':
+                return 'C';
+            case 'C':
+                return 'G';
+        }
+        return ch;
+    });
+    sequences[counter] = rRev;
+    seqLens[counter] = rRev.length();
+
+    // Generate Suffix Array
+    string fSeq;
+    for (string seq : sequences) {
+        fSeq += seq + '$';
+    }
+    vector<Suffix> sa = sufArr(seqLens, fSeq);
+
+    // Find Common Substrings
+    map<string_view, int> maxSuf;
+    map<int, int> frequency;
+    int maxMatch = 0;
+    int topIdx = -1;
+    int botIdx = size(sequences);
+    for (int i = size(sequences); i < sa.size(); i++) {
+        int currMatch = 0;
+        int topMatch = 0;
+        int botMatch = 0;
+        if (sa[i].group != 0) {
+            topIdx = i;
+        }
+        while (botIdx < sa.size() && (sa[botIdx].group == 0 || botIdx <= i)) {
+            botIdx++;
+        }
+        if (sa[i].group == 0 && topIdx != -1) {
+            topMatch = cMatch(sa[i].s, sa[topIdx].s);
+        }
+        if (sa[i].group == 0 && botIdx != sa.size()) {
+            botMatch = cMatch(sa[i].s, sa[botIdx].s);
+        }
+        if (topMatch != 0 || botMatch != 0) {
+            currMatch = max(topMatch, botMatch);
+            frequency[currMatch]++;
+        }
+        if (currMatch > maxMatch) {
+            maxMatch = currMatch;
+            maxSuf.clear();
+            maxSuf[string_view(sa[i].s.data(), maxMatch)] = i;
+        } else if (currMatch == maxMatch) {
+            maxSuf[string_view(sa[i].s.data(), maxMatch)] = i;
+        }
+    }
+
+    cout << "Match Length Histogram:" << '\n';
+    for (const auto &[k, v] : frequency) {
+        cout << k << ' ' << v << '\n';
+    }
+    cout << '\n';
+
+    cout << "The longest match length: " << maxMatch << '\n';
+    cout << "Number of match strings: " << maxSuf.size() << '\n';
+    cout << '\n';
+
+    for (const auto &[maxSeq, idx] : maxSuf) {
+        cout << "Match string: " << maxSeq << '\n';
+        cout << "Description: This sequence comes from [look up entry in .gbff "
+                "annotation file using the position information below]"
+             << '\n';
+        cout << '\n';
+
+        int topMaxIdx = idx - 1;
+        int botMaxIdx = idx + 1;
+        while (topMaxIdx >= 0 &&
+               sa[topMaxIdx].s.substr(0, maxMatch) == maxSeq) {
+            topMaxIdx--;
+        }
+        while (botMaxIdx < sa.size() &&
+               sa[botMaxIdx].s.substr(0, maxMatch) == maxSeq) {
+            botMaxIdx++;
+        }
+        topMaxIdx++;
+        botMaxIdx--;
+
+        for (int i = topMaxIdx; i <= botMaxIdx; i++) {
+            int position = sa[i].i + 1;
+            for (int j = 0; j < sa[i].group; j++) {
+                int tosub = seqLens[j];
+                position -= seqLens[j] + 1;
+            }
+
+            string strand = "forward";
+            int nIdx = sa[i].group;
+            if (nIdx == size(inputs)) {
+                nIdx--;
+                strand = "reverse";
+            }
+
+            cout << "Fasta: " << inputNames[nIdx] << '\n';
+            cout << "Position: " << position << '\n';
+            cout << "Strand: " << strand << '\n';
+            cout << '\n';
+        }
+    }
+
+    return 0;
+}
