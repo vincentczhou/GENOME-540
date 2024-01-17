@@ -1,0 +1,639 @@
+Assignment: GS 540 HW2
+Name: Vincent Chau
+Email: vkchau@uw.edu
+Language: C++17
+Runtime: 0m33.071s
+
+Fasta 1: mm39_chr19_35Mb_45Mb.fa
+Non-alphabetic characters: 1145
+>chr19:35000000-45000000
+*=10000000
+A=2855850
+C=2156699
+G=2155984
+T=2831467
+N=0
+
+Nucleotide Frequencies:
+A=0.2856
+C=0.2157
+G=0.2156
+T=0.2831
+
+Dinucleotide Count Matrix:
+A=881512 541965 754135 678238
+C=749057 557183 103715 746744
+G=627012 436395 555886 536691
+T=598268 621156 742248 869794
+
+Dinucleotide Frequency Matrix:
+A=0.0882 0.0542 0.0754 0.0678
+C=0.0749 0.0557 0.0104 0.0747
+G=0.0627 0.0436 0.0556 0.0537
+T=0.0598 0.0621 0.0742 0.0870
+
+Conditional Frequency Matrix:
+A=0.3087 0.1898 0.2641 0.2375
+C=0.3473 0.2583 0.0481 0.3462
+G=0.2908 0.2024 0.2578 0.2489
+T=0.2113 0.2194 0.2621 0.3072
+
+Fasta 2: simulated_equal_freq.fa
+Non-alphabetic characters: 0
+>simulated_equal_freq
+*=10000000
+A=2501977
+C=2498145
+G=2500538
+T=2499340
+N=0
+
+Nucleotide Frequencies:
+A=0.2502
+C=0.2498
+G=0.2501
+T=0.2499
+
+Dinucleotide Count Matrix:
+A=625365 625042 624540 627029
+C=625109 624325 625612 623099
+G=625269 624569 626008 624692
+T=626234 624209 624377 624520
+
+Dinucleotide Frequency Matrix:
+A=0.0625 0.0625 0.0625 0.0627
+C=0.0625 0.0624 0.0626 0.0623
+G=0.0625 0.0625 0.0626 0.0625
+T=0.0626 0.0624 0.0624 0.0625
+
+Conditional Frequency Matrix:
+A=0.2499 0.2498 0.2496 0.2506
+C=0.2502 0.2499 0.2504 0.2494
+G=0.2501 0.2498 0.2503 0.2498
+T=0.2506 0.2497 0.2498 0.2499
+
+Fasta 3: simulated_markov_0.fa
+Non-alphabetic characters: 0
+>simulated_markov_0
+*=10000000
+A=2858379
+C=2154297
+G=2156598
+T=2830726
+N=0
+
+Nucleotide Frequencies:
+A=0.2858
+C=0.2154
+G=0.2157
+T=0.2831
+
+Dinucleotide Count Matrix:
+A=816429 616220 615212 810517
+C=615806 464046 465826 608619
+G=615779 465079 465415 610325
+T=810365 608952 610144 801265
+
+Dinucleotide Frequency Matrix:
+A=0.0816 0.0616 0.0615 0.0811
+C=0.0616 0.0464 0.0466 0.0609
+G=0.0616 0.0465 0.0465 0.0610
+T=0.0810 0.0609 0.0610 0.0801
+
+Conditional Frequency Matrix:
+A=0.2856 0.2156 0.2152 0.2836
+C=0.2859 0.2154 0.2162 0.2825
+G=0.2855 0.2157 0.2158 0.2830
+T=0.2863 0.2151 0.2155 0.2831
+
+Fasta 4: simulated_markov_1.fa
+Non-alphabetic characters: 0
+>simulated_markov_1
+*=10000000
+A=2858050
+C=2153991
+G=2156496
+T=2831463
+N=0
+
+Nucleotide Frequencies:
+A=0.2858
+C=0.2154
+G=0.2156
+T=0.2831
+
+Dinucleotide Count Matrix:
+A=882972 541222 753449 680406
+C=749229 555904 103819 745039
+G=626950 435746 557340 536460
+T=598899 621119 741887 869558
+
+Dinucleotide Frequency Matrix:
+A=0.0883 0.0541 0.0753 0.0680
+C=0.0749 0.0556 0.0104 0.0745
+G=0.0627 0.0436 0.0557 0.0536
+T=0.0599 0.0621 0.0742 0.0870
+
+Conditional Frequency Matrix:
+A=0.3089 0.1894 0.2636 0.2381
+C=0.3478 0.2581 0.0482 0.3459
+G=0.2907 0.2021 0.2584 0.2488
+T=0.2115 0.2194 0.2620 0.3071
+
+Run 1:
+
+Fasta 1: hg38_chr10_90Mb_100Mb.fa
+Non-alphabetic characters: 1145
+>chr10:90000000-100000000
+*=10000000
+A=2920816
+C=2082691
+G=2074676
+T=2921817
+N=0
+
+Fasta 2: simulated_equal_freq.fa
+Non-alphabetic characters: 0
+>simulated_equal_freq
+*=10000000
+A=2501977
+C=2498145
+G=2500538
+T=2499340
+N=0
+
+Match Length Histogram:
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+9 1
+10 85453
+11 2956879
+12 4393538
+13 1856013
+14 527356
+15 135348
+16 34062
+17 8248
+18 2204
+19 623
+20 209
+21 46
+22 8
+23 2
+24 1
+25 1
+
+The longest match length: 25
+Number of match strings: 1
+
+Match string: GATAGGAAAAAAGACCCCTTTCTTC
+
+Fasta: simulated_equal_freq.fa
+Position: 3947255
+Strand: forward
+
+Fasta: hg38_chr10_90Mb_100Mb.fa
+Position: 7974793
+Strand: forward
+
+Run 2:
+
+Fasta 1: hg38_chr10_90Mb_100Mb.fa
+Non-alphabetic characters: 1145
+>chr10:90000000-100000000
+*=10000000
+A=2920816
+C=2082691
+G=2074676
+T=2921817
+N=0
+
+Fasta 2: simulated_markov_0.fa
+Non-alphabetic characters: 0
+>simulated_markov_0
+*=10000000
+A=2858379
+C=2154297
+G=2156598
+T=2830726
+N=0
+
+Match Length Histogram:
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+9 212
+10 192377
+11 2456892
+12 4097856
+13 2249398
+14 733152
+15 200264
+16 51890
+17 13253
+18 3432
+19 938
+20 232
+21 70
+22 20
+23 3
+24 1
+25 1
+26 1
+
+The longest match length: 26
+Number of match strings: 1
+
+Match string: AGGATTATACCACTGCCAAAGTGGGG
+
+Fasta: hg38_chr10_90Mb_100Mb.fa
+Position: 3654255
+Strand: forward
+
+Fasta: simulated_markov_0.fa
+Position: 6055995
+Strand: forward
+
+Run 3:
+
+Fasta 1: hg38_chr10_90Mb_100Mb.fa
+Non-alphabetic characters: 1145
+>chr10:90000000-100000000
+*=10000000
+A=2920816
+C=2082691
+G=2074676
+T=2921817
+N=0
+
+Fasta 2: simulated_markov_1.fa
+Non-alphabetic characters: 0
+>simulated_markov_1
+*=10000000
+A=2858050
+C=2153991
+G=2156496
+T=2831463
+N=0
+
+Match Length Histogram:
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 720
+8 6182
+9 39597
+10 274143
+11 1334192
+12 3859318
+13 2927083
+14 1105662
+15 330008
+16 90180
+17 24350
+18 6386
+19 1611
+20 411
+21 109
+22 29
+23 9
+24 2
+25 1
+26 1
+
+The longest match length: 26
+Number of match strings: 1
+
+Match string: AGGATTATACCACTGCCAAAGTGGGG
+
+Fasta: hg38_chr10_90Mb_100Mb.fa
+Position: 3654255
+Strand: forward
+
+Fasta: simulated_markov_1.fa
+Position: 6055995
+Strand: forward
+
+Question 4-A:
+
+Given the approximately ten-fold increase in longest match length of the real data versus the simulated models, we can conclude the real data matches are statistically significant.
+
+Question 4-B:
+
+The longest match corresponds to a LCOR (ligand-dependent corepressor) gene. It encodes for a protein present in adult and fetal tissue, and is recruited to nuclear receptors.
+
+Question 4-C:
+
+There is one UCE present in this region; the consecutive values of "one" present in the histogram (greater than 200) are part of the same "parent" sequence.
+
+Program:
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void printData(int num, string inputName, int nonAlpha, string header,
+               int total, map<char, int>& nuFreq, map<char, float>& nuPer,
+               map<string, int>& diFreq, map<string, float>& diPer,
+               map<string, float>& coPer) {
+    // std::map sorts keys!!!
+    cout << "Fasta " << num << ": " << inputName << '\n';
+    cout << "Non-alphabetic characters: " << nonAlpha << '\n';
+    cout << header << '\n';
+    cout << "*=" << total << '\n';
+    for (const auto& [k, v] : nuFreq) {
+        cout << k << '=' << v << '\n';
+    }
+    cout << "N=" << nuFreq['N'] << '\n';
+    cout << '\n';
+    cout << "Nucleotide Frequencies:" << '\n';
+    for (const auto& [k, v] : nuPer) {
+        cout << k << "=" << fixed << setprecision(4) << v << '\n';
+    }
+    cout << '\n';
+    cout << "Dinucleotide Count Matrix:";
+    char prevChar;
+    char currChar;
+    for (const auto& [k, v] : diFreq) {
+        currChar = k[0];
+        if (currChar != prevChar) {
+            prevChar = currChar;
+            cout << '\n';
+            cout << currChar << '=' << v;
+        } else {
+            cout << ' ' << v;
+        }
+    }
+    cout << '\n';
+    cout << '\n';
+    cout << "Dinucleotide Frequency Matrix:";
+    for (const auto& [k, v] : diPer) {
+        currChar = k[0];
+        if (currChar != prevChar) {
+            prevChar = currChar;
+            cout << '\n';
+            cout << currChar << '=' << fixed << setprecision(4) << v;
+        } else {
+            cout << ' ' << fixed << setprecision(4) << v;
+        }
+    }
+    cout << '\n';
+    cout << '\n';
+    cout << "Conditional Frequency Matrix:";
+    for (const auto& [k, v] : coPer) {
+        currChar = k[0];
+        if (currChar != prevChar) {
+            prevChar = currChar;
+            cout << '\n';
+            cout << currChar << '=' << fixed << setprecision(4) << v;
+        } else {
+            cout << ' ' << fixed << setprecision(4) << v;
+        }
+    }
+    cout << '\n';
+    cout << '\n';
+}
+
+string conGen(int length, map<string, float>& coPer) {
+    map<char, discrete_distribution<>> prob;
+    vector<float> currV;
+    char prevChar;
+    char currChar;
+    for (const auto& [k, v] : coPer) {
+        currChar = k[0];
+        if (currChar != prevChar) {
+            if (prevChar) {
+                prob[prevChar] =
+                    discrete_distribution(currV.begin(), currV.end());
+            }
+            currV.clear();
+            currV.push_back(v);
+            prevChar = currChar;
+        } else {
+            currV.push_back(v);
+        }
+    }
+    prob[prevChar] = discrete_distribution(currV.begin(), currV.end());
+
+    map<int, char> cMap = {{0, 'A'}, {1, 'C'}, {2, 'G'}, {3, 'T'}};
+
+    string gen;
+    random_device rd;
+    mt19937 ranGen(1337);
+    discrete_distribution<> initial({0.25, 0.25, 0.25, 0.25});
+
+    gen += cMap[initial(ranGen)];
+
+    for (int i = 0; i < length - 1; i++) {
+        gen += cMap[prob[gen[i]](ranGen)];
+        // vector<double> currProb = prob[gen[i]].probabilities();
+        // for (auto n : currProb) {
+        //     cout << n << ' ';
+        // }
+        // cout << '\n';
+    }
+
+    return gen;
+}
+
+map<string, float> cPer(map<string, float>& diPer, int dtotal) {
+    map<string, float> coPer;
+    map<char, float> cTotal;
+    float currTotal;
+    char prevChar;
+    char currChar;
+    for (const auto& [k, v] : diPer) {
+        currChar = k[0];
+        if (currChar != prevChar) {
+            cTotal[currChar] = v;
+            prevChar = currChar;
+        } else {
+            cTotal[currChar] += v;
+        }
+    }
+    for (const auto& [k, v] : diPer) {
+        coPer[k] = (float)v / cTotal[k[0]];
+    }
+    return coPer;
+}
+
+map<string, float> dPer(map<string, int>& diFreq, int dtotal) {
+    map<string, float> diPer;
+    for (const auto& [k, v] : diFreq) {
+        diPer[k] = (float)v / dtotal;
+    }
+    return diPer;
+}
+
+map<string, int> dFreq(string& seq, int len) {
+    map<string, int> diFreq;
+    for (int i = 0; i < len - 1; i++) {
+        diFreq[string() + seq[i] + seq[i + 1]]++;
+    }
+    return diFreq;
+}
+
+map<char, float> nPer(map<char, int>& nuFreq, int total) {
+    map<char, float> nuPer;
+    for (const auto& [k, v] : nuFreq) {
+        nuPer[k] = (float)v / total;
+    }
+    return nuPer;
+}
+
+map<char, int> nFreq(string& seq) {
+    map<char, int> nuFreq;
+    int len = seq.length();
+    for (int i = 0; i < len; i++) {
+        char nucleotide = seq[i];
+        switch (nucleotide) {
+            case 'A':
+                nuFreq['A']++;
+                break;
+            case 'T':
+                nuFreq['T']++;
+                break;
+            case 'G':
+                nuFreq['G']++;
+                break;
+            case 'C':
+                nuFreq['C']++;
+                break;
+        }
+    }
+    return nuFreq;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    freopen("output.txt", "w", stdout);
+    // const char* input = "input/CP003913.fna";
+    const char* input = "input/mm39_chr19_35Mb_45Mb.fa";
+    string inputName = string(input);
+    inputName = inputName.substr(inputName.find('/') + 1);
+
+    freopen(input, "r", stdin);
+
+    string header;
+    getline(cin, header, '\n');
+    string sequence;
+    int seqLen = 0;
+    int n = 0, f = 0;
+    map<char, int> nuFreq;
+    string line;
+    while (cin >> line) {
+        int linLen = line.length();
+        transform(line.begin(), line.end(), line.begin(), ::toupper);
+        if (isdigit(line[0])) {
+            f += linLen;
+        } else {
+            for (int i = 0; i < linLen; i++) {
+                char nucleotide = line[i];
+                switch (nucleotide) {
+                    case 'A':
+                        nuFreq['A']++;
+                        break;
+                    case 'T':
+                        nuFreq['T']++;
+                        break;
+                    case 'G':
+                        nuFreq['G']++;
+                        break;
+                    case 'C':
+                        nuFreq['C']++;
+                        break;
+                    case 'N':
+                        n++;
+                        break;
+                }
+            }
+            sequence += line;
+        }
+    }
+    seqLen = sequence.length();
+    int total = accumulate(nuFreq.begin(), nuFreq.end(), 0,
+                           [](const int previous, const auto& element) {
+                               return previous + element.second;
+                           }) +
+                n;
+    map<char, float> nuPer = nPer(nuFreq, total);
+    map<string, int> diFreq = dFreq(sequence, seqLen);
+    int dtotal = accumulate(diFreq.begin(), diFreq.end(), 0,
+                            [](const int previous, const auto& element) {
+                                return previous + element.second;
+                            });
+    map<string, float> diPer = dPer(diFreq, dtotal);
+    map<string, float> coPer = cPer(diPer, dtotal);
+    printData(1, inputName, f, header, total, nuFreq, nuPer, diFreq, diPer,
+              coPer);
+
+    map<string, float> ePer;
+    map<string, float> zeroPer;
+    for (const auto& [k, v] : coPer) {
+        ePer[k] = (float)0.25;
+        zeroPer[k] = nuPer[k[1]];
+    }
+
+    string eName = "simulated_equal_freq.fa";
+    string eHeader = ">simulated_equal_freq";
+    string eSeq = conGen(seqLen, ePer);
+    ofstream eFile("input/" + eName);
+    eFile << eHeader << '\n';
+    eFile << eSeq;
+    eFile.close();
+    map<char, int> enuFreq = nFreq(eSeq);
+    map<char, float> enuPer = nPer(enuFreq, total);
+    map<string, int> ediFreq = dFreq(eSeq, seqLen);
+    map<string, float> ediPer = dPer(ediFreq, dtotal);
+    map<string, float> ecoPer = cPer(ediPer, dtotal);
+    printData(2, eName, 0, eHeader, total, enuFreq, enuPer, ediFreq, ediPer,
+              ecoPer);
+
+    string zeroName = "simulated_markov_0.fa";
+    string zeroHeader = ">simulated_markov_0";
+    string zeroSeq = conGen(seqLen, zeroPer);
+    ofstream zeroFile("input/" + zeroName);
+    zeroFile << zeroHeader << '\n';
+    zeroFile << zeroSeq;
+    zeroFile.close();
+    map<char, int> zeronuFreq = nFreq(zeroSeq);
+    map<char, float> zeronuPer = nPer(zeronuFreq, total);
+    map<string, int> zerodiFreq = dFreq(zeroSeq, seqLen);
+    map<string, float> zerodiPer = dPer(zerodiFreq, dtotal);
+    map<string, float> zerocoPer = cPer(zerodiPer, dtotal);
+    printData(3, zeroName, 0, zeroHeader, total, zeronuFreq, zeronuPer,
+              zerodiFreq, zerodiPer, zerocoPer);
+
+    string cName = "simulated_markov_1.fa";
+    string cHeader = ">simulated_markov_1";
+    string cSeq = conGen(seqLen, coPer);
+    ofstream cFile("input/" + cName);
+    cFile << cHeader << '\n';
+    cFile << cSeq;
+    cFile.close();
+    map<char, int> cnuFreq = nFreq(cSeq);
+    map<char, float> cnuPer = nPer(cnuFreq, total);
+    map<string, int> cdiFreq = dFreq(cSeq, seqLen);
+    map<string, float> cdiPer = dPer(cdiFreq, dtotal);
+    map<string, float> ccoPer = cPer(cdiPer, dtotal);
+    printData(4, cName, 0, cHeader, total, cnuFreq, cnuPer, cdiFreq, cdiPer,
+              ccoPer);
+
+    return 0;
+}
