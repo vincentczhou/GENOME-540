@@ -1,0 +1,1257 @@
+Assignment: GS 540 HW3
+Name: Vincent Chau
+Email: vkchau@uw.edu
+Language: C++17
+Runtime: 0m26.801s
+
+Nucleotide Histogram:
+A=537381
+C=334523
+G=338691
+T=535785
+N=0
+
+Background Frequency:
+A=0.3073
+C=0.1927
+G=0.1927
+T=0.3073
+
+Count Matrix:
+-10 603 53 777 188
+-9 546 73 793 209
+-8 606 71 689 255
+-7 634 134 487 366
+-6 637 130 397 457
+-5 747 167 267 440
+-4 702 189 210 520
+-3 709 286 305 321
+-2 639 255 209 518
+-1 543 320 215 543
+0 1479 1 73 68
+1 0 0 0 1620
+2 5 2 1612 1
+3 861 133 377 249
+4 560 572 141 347
+5 828 125 130 537
+6 813 216 306 285
+7 805 240 149 426
+8 744 148 179 549
+9 705 253 303 359
+10 619 268 177 556
+
+Frequency Matrix:
+-10 0.3720 0.0327 0.4793 0.1160
+-9 0.3368 0.0450 0.4892 0.1289
+-8 0.3738 0.0438 0.4250 0.1573
+-7 0.3911 0.0827 0.3004 0.2258
+-6 0.3930 0.0802 0.2449 0.2819
+-5 0.4608 0.1030 0.1647 0.2714
+-4 0.4331 0.1166 0.1295 0.3208
+-3 0.4374 0.1764 0.1882 0.1980
+-2 0.3942 0.1573 0.1289 0.3196
+-1 0.3350 0.1974 0.1326 0.3350
+0 0.9124 0.0006 0.0450 0.0419
+1 0.0000 0.0000 0.0000 1.0000
+2 0.0031 0.0012 0.9951 0.0006
+3 0.5315 0.0821 0.2327 0.1537
+4 0.3457 0.3531 0.0870 0.2142
+5 0.5111 0.0772 0.0802 0.3315
+6 0.5019 0.1333 0.1889 0.1759
+7 0.4969 0.1481 0.0920 0.2630
+8 0.4593 0.0914 0.1105 0.3389
+9 0.4352 0.1562 0.1870 0.2216
+10 0.3821 0.1654 0.1093 0.3432
+
+Weight Matrix:
+-10 0.2758 -2.5595 1.3143 -1.4056
+-9 0.1326 -2.0976 1.3437 -1.2528
+-8 0.2830 -2.1377 1.1409 -0.9658
+-7 0.3482 -1.2213 0.6403 -0.4445
+-6 0.3550 -1.2651 0.3456 -0.1241
+-5 0.5848 -0.9037 -0.2267 -0.1788
+-4 0.4952 -0.7252 -0.5732 0.0622
+-3 0.5095 -0.1276 -0.0348 -0.6337
+-2 0.3595 -0.2931 -0.5801 0.0566
+-1 0.1246 0.0345 -0.5392 0.1246
+0 1.5702 -8.2874 -2.0976 -2.8727
+1 -99.0000 -99.0000 -99.0000 1.7025
+2 -6.6374 -7.2865 2.3681 -8.9593
+3 0.7906 -1.2313 0.2719 -0.9993
+4 0.1700 0.8733 -1.1470 -0.5205
+5 0.7342 -1.3208 -1.2642 0.1095
+6 0.7078 -0.5317 -0.0292 -0.8045
+7 0.6936 -0.3797 -1.0674 -0.2246
+8 0.5799 -1.0771 -0.8027 0.1414
+9 0.5022 -0.3036 -0.0434 -0.4714
+10 0.3145 -0.2205 -0.8189 0.1597
+
+Maximum Score: 17.7047514516
+
+Score Histogram CDS:
+-10 2
+-9 1
+-8 1
+-5 4
+-4 3
+-3 7
+-2 14
+-1 15
+0 19
+1 25
+2 37
+3 67
+4 85
+5 113
+6 140
+7 167
+8 194
+9 192
+10 201
+11 166
+12 86
+13 56
+14 20
+15 6
+
+Score Histogram All:
+-32 1
+-31 7
+-30 33
+-29 79
+-28 308
+-27 730
+-26 1634
+-25 3114
+-24 5463
+-23 8760
+-22 12572
+-21 17225
+-20 22546
+-19 28046
+-18 34709
+-17 41636
+-16 49012
+-15 55891
+-14 62194
+-13 66952
+-12 69991
+-11 70236
+-10 67830
+-9 63939
+-8 57176
+-7 51167
+-6 43950
+-5 38154
+-4 32850
+-3 28466
+-2 25872
+-1 22266
+0 19973
+1 17267
+2 14692
+3 11624
+4 8923
+5 6537
+6 4507
+7 2872
+8 1806
+9 1009
+10 591
+11 295
+12 150
+13 68
+14 24
+15 7
+lt-50 2419566
+
+Position List:
+4775 0 11.2316
+5446 0 10.8892
+8640 0 10.0405
+10745 0 10.0061
+14198 0 10.7768
+16577 0 11.1896
+20321 0 10.0668
+26322 0 10.0668
+34306 0 11.7171
+34603 0 10.0210
+45868 1 10.9213
+51326 0 11.1821
+53492 0 12.1882
+56216 0 10.6780
+56395 1 10.3259
+56650 0 10.7640
+57065 1 10.0248
+59657 1 10.5943
+70087 0 10.8731
+71047 0 12.6605
+74249 1 10.1356
+74843 1 10.3042
+79475 0 11.1896
+83219 0 10.0668
+88880 1 10.0361
+89582 1 10.2067
+93009 0 10.9498
+104776 0 10.2498
+109205 0 10.5815
+112494 0 10.0093
+117124 0 11.8364
+119902 0 10.2516
+120558 0 10.3072
+123006 0 11.2083
+124902 0 11.9527
+129087 0 10.5673
+146950 0 10.7998
+150312 0 10.0611
+152370 0 10.9504
+155023 1 12.5446
+156359 0 10.6021
+161331 0 10.2715
+165432 1 11.2598
+166954 0 10.2658
+169856 0 12.6181
+175411 0 10.0643
+177026 0 10.7975
+181829 1 13.2970
+182918 1 10.5479
+187115 0 10.2957
+190173 1 12.4023
+192191 1 10.4240
+202501 1 10.5562
+203906 1 10.9309
+208325 0 10.0279
+209275 0 11.5119
+216318 0 10.7966
+224616 0 10.4965
+230468 0 10.2827
+230611 0 10.2584
+231519 0 10.2919
+233975 0 12.0951
+237064 0 11.7276
+238772 1 11.3535
+247337 1 10.4197
+247342 1 10.3178
+248606 0 10.7428
+249347 0 10.2560
+253197 0 11.4163
+254618 0 11.1896
+258362 0 10.0668
+260185 0 12.6141
+260791 0 11.5839
+262518 1 10.5846
+262838 0 11.5563
+264119 0 10.3756
+269113 0 10.3113
+270863 0 10.7571
+271251 0 10.7627
+276058 1 12.9075
+279458 0 10.1915
+283273 0 10.0655
+285588 0 10.6917
+288417 0 10.0330
+292128 1 10.3215
+292949 1 11.4870
+296412 0 10.1536
+306490 0 11.5286
+307060 0 10.2778
+308719 0 10.1721
+309063 1 10.5344
+313359 1 10.3559
+315307 0 12.0428
+317852 1 11.7359
+322450 1 11.4911
+322637 1 12.9660
+326585 1 12.1223
+327225 0 10.0480
+332747 0 10.1009
+333546 0 10.5241
+335676 0 10.2169
+337187 0 13.0200
+339046 0 10.5391
+339860 0 11.6663
+346711 0 11.1098
+349803 0 10.4370
+352670 0 10.7756
+356732 0 12.4606
+360987 1 11.5921
+373885 0 10.3874
+373896 0 10.0223
+374429 0 10.3198
+377317 0 10.8177
+390338 1 10.1842
+393339 1 10.1376
+394243 0 10.0707
+395167 1 10.1632
+395436 1 13.2546
+395727 0 11.9912
+401132 0 10.5700
+401368 0 11.0369
+401377 0 10.1949
+404761 1 10.8477
+406153 0 11.0385
+406940 1 11.2130
+414714 0 10.4799
+425757 0 10.2189
+426431 0 10.1192
+430600 0 10.1212
+432042 0 11.2532
+438677 0 10.7253
+440018 1 10.3556
+447941 0 13.2932
+449390 0 12.2363
+455385 0 12.2297
+457065 1 10.6366
+461529 1 11.4688
+461652 0 10.3473
+466013 0 11.2302
+468672 1 11.9124
+472569 0 10.2951
+477719 0 12.2363
+478444 0 10.2465
+481591 0 10.5662
+484751 1 11.4295
+493905 1 10.7349
+493941 0 10.8709
+495347 1 12.1765
+498626 0 10.9064
+500568 1 11.1456
+501806 0 10.6546
+507535 0 10.2351
+508646 0 12.5538
+508679 0 10.8683
+508722 1 12.9567
+510443 0 10.2250
+512138 0 10.5082
+513209 0 10.6168
+517569 0 10.2615
+531149 0 10.7393
+533018 1 13.0802
+533709 0 10.5865
+545721 0 10.0668
+549008 0 10.1603
+549171 1 10.4254
+552567 0 11.3753
+553250 1 11.7270
+554943 0 11.9977
+565897 0 10.4462
+566353 0 10.1347
+567681 0 10.5039
+567937 1 11.8585
+569872 1 11.2977
+574228 1 12.9808
+575311 1 10.3585
+577347 0 10.4409
+579127 0 11.1620
+584972 1 10.0260
+587463 0 10.3614
+587572 0 11.2451
+587621 0 10.9379
+600745 0 10.5028
+601410 1 10.1474
+602853 1 10.7931
+603646 0 10.1821
+608284 0 11.4167
+610800 1 12.3643
+611757 1 10.4080
+622733 0 10.2785
+624645 0 12.0507
+630528 0 11.9105
+632192 1 11.7862
+635096 1 10.0883
+635167 0 11.3805
+641966 0 11.8728
+643269 0 10.2030
+645709 0 10.6835
+646615 0 10.2923
+647062 0 12.0213
+648450 0 11.1157
+648849 0 10.3729
+651531 1 10.1557
+651722 0 10.0418
+655515 0 10.5630
+655722 0 10.4229
+658165 0 10.4028
+662860 1 12.6207
+666034 0 10.7686
+670285 1 13.0558
+683103 0 10.4039
+683541 0 10.8566
+698208 0 10.2018
+699109 0 12.0025
+706669 0 11.8293
+707730 1 10.2613
+712760 1 12.5003
+713186 0 10.3500
+715398 0 11.3434
+716586 0 12.6275
+723768 1 10.9869
+728933 0 10.7233
+729635 1 11.2324
+729846 1 10.3168
+739911 0 10.4112
+739974 0 10.9068
+740772 1 12.0222
+742241 1 10.5429
+745800 0 11.2854
+747572 0 10.2620
+748601 0 10.2373
+753932 1 10.1612
+756032 1 10.2849
+760099 1 10.8729
+761035 0 10.7717
+764856 0 10.8445
+765601 1 10.0833
+767178 1 10.2554
+769266 0 10.0337
+769614 1 11.7987
+771203 1 12.7654
+774113 0 11.9497
+775461 0 10.2482
+776251 0 10.0577
+776684 0 11.1679
+777103 0 10.0935
+777247 1 10.2841
+780060 0 10.8333
+780597 0 12.3617
+782691 0 10.8732
+785345 0 12.8025
+788402 0 10.0425
+796234 1 10.0473
+796333 1 12.4867
+800905 0 10.0442
+801826 1 10.7461
+804969 0 10.0232
+813231 0 11.5288
+818021 0 14.8389
+820048 1 10.2771
+822572 0 10.1617
+823235 1 10.1521
+826855 0 10.0136
+828089 0 12.5210
+828860 1 10.2738
+830509 0 10.5209
+833823 0 10.1286
+836288 0 10.1467
+838340 1 10.3282
+838845 0 10.0037
+839344 1 10.6051
+840391 0 11.7974
+842184 0 13.8699
+844056 0 10.7053
+846047 0 11.1268
+849893 1 11.2979
+851114 0 10.0321
+855917 0 10.4420
+857598 0 10.2126
+858853 0 11.5413
+868640 0 10.1503
+873742 0 10.6528
+878784 0 10.4645
+883482 1 10.7541
+886860 1 10.6941
+887865 1 12.3247
+890159 1 10.7328
+896268 1 11.0383
+901406 1 10.6444
+902673 0 10.4162
+903529 1 11.0954
+903578 1 10.0773
+904432 1 10.2908
+906155 1 10.4460
+907554 1 11.1029
+909837 1 10.4864
+914719 0 12.1947
+915711 0 10.3695
+927062 1 10.1892
+934133 0 10.3382
+938198 0 10.3353
+938726 1 10.9060
+938905 1 10.4788
+938997 0 10.7149
+939631 0 11.0626
+939895 1 10.3076
+940400 1 10.4550
+941498 1 10.1115
+942033 1 11.1515
+944972 0 12.3947
+947233 0 10.2667
+948631 1 10.5722
+948920 1 10.2470
+949630 1 10.9298
+953371 1 10.5234
+956685 1 11.0320
+958983 0 10.7713
+959125 1 10.8795
+959149 0 11.0622
+959364 0 10.4297
+962061 1 10.6686
+962200 1 10.5890
+962386 1 10.1520
+967141 1 10.7830
+967441 1 10.4344
+971060 1 11.5447
+976314 0 12.2691
+976891 1 12.7952
+981514 1 10.0804
+985246 1 10.0110
+990821 1 10.3459
+990915 1 10.9450
+992804 1 11.7804
+992867 1 10.9251
+995597 0 12.4161
+1000499 0 10.6540
+1000528 1 11.2986
+1001908 1 11.7118
+1005402 1 11.2201
+1010110 1 10.2291
+1010549 0 12.1216
+1015000 1 10.4669
+1015468 0 10.3727
+1016808 1 10.2538
+1019588 0 11.4808
+1020306 0 10.8505
+1024413 0 13.7812
+1026790 1 10.0244
+1026800 1 10.5339
+1029058 0 10.7299
+1031052 0 11.1348
+1032902 1 12.4378
+1035249 1 10.9784
+1040208 0 10.1683
+1042619 1 10.0239
+1045853 0 10.3522
+1048416 1 10.0635
+1049939 1 10.0859
+1051678 1 11.5721
+1055264 1 10.2519
+1062000 1 10.7311
+1063219 1 10.0795
+1069013 1 10.5391
+1070823 1 10.6893
+1071839 0 10.9737
+1077972 0 11.3313
+1078057 0 10.3102
+1078075 0 10.2922
+1084847 0 11.0325
+1099717 0 11.7981
+1101547 1 10.6779
+1103908 0 11.0427
+1108806 1 10.5261
+1109233 1 11.6500
+1110187 1 13.5075
+1113337 1 10.5499
+1114540 1 10.4557
+1114561 1 11.8056
+1120310 1 11.0321
+1125041 0 12.1420
+1131886 1 12.7063
+1132743 1 12.1221
+1140909 1 12.2355
+1142725 0 10.2409
+1148938 1 10.3563
+1149649 0 12.3674
+1155639 0 11.2123
+1157369 1 10.7316
+1157793 1 13.5750
+1160614 1 10.2560
+1160790 1 12.5460
+1167448 0 10.4691
+1169665 0 11.7496
+1170906 0 10.2296
+1174648 0 10.2132
+1183146 1 11.7010
+1184504 1 10.2456
+1193673 0 10.0257
+1197275 0 10.7582
+1200211 1 10.9575
+1202005 0 10.1208
+1206908 1 10.3280
+1207964 1 10.3382
+1209312 0 10.4151
+1218685 1 13.6048
+1220967 1 10.6403
+1224235 1 10.0114
+1227349 1 10.2919
+1229751 0 10.0777
+1231861 0 10.3078
+1233652 1 10.3487
+1237784 1 10.7937
+1242734 0 10.3074
+1242844 1 11.3694
+1258711 1 12.4494
+1261104 1 10.0269
+1261190 1 10.0392
+1262789 1 11.3533
+1265739 1 11.3718
+1267376 0 10.1116
+1268548 1 10.4574
+1269104 0 10.0135
+1270524 1 12.3878
+1279782 1 11.6690
+1283334 1 11.2350
+1283872 1 10.8670
+1283887 1 11.3532
+1285540 1 10.7287
+1286121 0 12.3877
+1290883 1 10.4542
+1297537 0 10.7305
+1300845 1 12.2517
+1301261 1 10.1802
+1305020 0 10.2405
+1313651 0 10.1641
+1324179 1 11.4164
+1325048 1 10.5812
+1325438 1 10.2755
+1329453 1 10.3744
+1332929 1 11.4682
+1334054 0 10.2452
+1337784 1 10.2865
+1338989 1 10.8249
+1341908 1 10.0650
+1345009 1 10.6645
+1345394 0 10.3979
+1346387 0 10.9148
+1346827 0 11.7768
+1347937 1 10.3259
+1350586 1 10.9814
+1352435 1 11.4329
+1355748 0 12.3396
+1357829 0 10.8550
+1358077 0 13.9049
+1363765 1 10.5949
+1364335 1 11.5554
+1364907 1 10.0173
+1376863 1 10.7370
+1379478 1 10.3431
+1380935 1 10.9795
+1383956 1 10.7753
+1386944 1 10.6580
+1393318 1 14.2833
+1394548 1 10.6203
+1396219 0 11.7409
+1396228 0 11.4893
+1397345 1 10.5968
+1397724 1 10.7824
+1397999 0 14.5053
+1401738 0 10.1764
+1405201 1 11.6224
+1407007 1 10.1509
+1412654 1 10.4309
+1414198 1 10.1156
+1424351 1 10.6226
+1424363 1 10.6392
+1428756 1 10.5142
+1431596 1 10.1269
+1435245 1 10.2835
+1435841 1 11.3825
+1437898 1 10.0501
+1442651 1 10.2420
+1444387 0 10.9987
+1444418 0 10.3141
+1446543 0 10.3155
+1447017 0 11.1289
+1447126 1 11.6449
+1453879 1 10.8516
+1458753 1 10.2949
+1460524 1 11.7149
+1461241 1 10.3553
+1461671 1 10.1837
+1463111 1 10.9234
+1463759 1 12.2095
+1463771 1 10.6802
+1470524 1 10.0122
+1473475 1 10.8119
+1474078 1 11.5305
+1478818 1 10.4372
+1479244 1 10.3276
+1479256 1 11.8398
+1482029 1 11.4995
+1482165 1 10.2085
+1483722 0 10.0777
+1484389 1 12.5625
+1484995 1 12.6141
+1486818 1 10.0668
+1490562 1 11.1896
+1495849 1 10.7778
+1497663 1 10.9213
+1499624 1 10.1052
+1501136 1 12.7740
+1504677 1 10.7444
+1505147 1 10.8462
+1505957 0 11.6479
+1509941 0 10.0703
+1511024 1 14.4916
+1514976 0 10.6101
+1523547 1 11.6025
+1523665 1 10.3292
+1523874 1 10.5158
+1528721 1 15.4377
+1533073 1 11.7841
+1536462 1 10.3782
+1536491 1 10.6225
+1538460 1 11.6744
+1543590 1 10.1523
+1544502 0 11.3514
+1545183 0 10.4244
+1545480 1 10.7681
+1546483 1 10.0579
+1547479 1 10.2145
+1558797 1 11.7316
+1561552 0 10.7870
+1563615 0 10.2648
+1564804 1 10.4835
+1568007 0 11.1961
+1572705 1 10.1019
+1581719 1 11.3968
+1584050 1 10.0300
+1587281 1 11.6360
+1591809 1 12.0246
+1595916 1 11.3757
+1599980 0 11.0982
+1603566 1 10.6026
+1606008 1 10.2660
+1609006 0 10.7579
+1610193 1 11.0198
+1611733 1 10.2884
+1618036 1 10.8485
+1621286 0 10.7632
+1623291 1 11.4955
+1624512 1 11.8133
+1626551 1 12.8431
+1630798 0 10.1203
+1631170 1 10.8045
+1633154 1 12.2821
+1635368 0 11.6309
+1636778 1 11.5294
+1637538 1 11.3427
+1639657 0 10.3220
+1640888 1 11.6818
+1642460 0 10.2742
+1643231 0 10.8803
+1647678 1 12.6135
+1650487 1 10.2040
+1651550 1 11.2236
+1655830 0 10.1270
+1661867 0 11.3552
+1664820 0 10.2067
+1666484 1 10.2662
+1672848 1 10.0602
+1672864 1 12.7632
+1682399 1 10.5213
+1687573 1 10.5362
+1688371 0 10.1621
+1688866 0 12.7934
+1694982 1 12.9437
+1695305 1 10.6408
+1695552 0 10.3259
+1695788 1 10.0516
+1696377 1 10.0804
+1698221 0 12.1589
+1701406 1 10.9474
+1702131 1 10.6622
+1703161 0 10.4698
+1704986 1 10.1563
+1711766 1 10.7611
+1712344 1 10.1244
+1715361 1 10.6557
+1716543 1 10.0156
+1718543 1 11.1311
+1718608 0 11.4304
+1721618 0 10.4395
+1726296 0 12.3007
+1727187 1 10.2128
+1728711 0 10.1407
+1736337 0 10.2328
+1741308 0 11.7834
+1742788 1 10.8729
+1743731 1 11.0798
+
+
+Program:
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+template <typename T>
+struct CDSite {
+    int pos;
+    double score;
+    T seq;
+    int strand;
+};
+
+void printData(map<char, int>& nuFreq, map<char, double>& nuPer,
+               map<int, map<char, int>>& countMatrix,
+               map<int, map<char, double>>& frequencyMatrix,
+               map<int, map<char, double>>& weightMatrix, double maxScore,
+               map<int, vector<CDSite<string>>>& cscoreHist,
+               map<int, vector<CDSite<string_view>>>& gscoreHist,
+               vector<CDSite<string_view>>& uniqueSites) {
+    // std::map sorts keys!!!
+    cout << "Nucleotide Histogram:" << '\n';
+    for (const auto& [k, v] : nuFreq) {
+        if (k == 'N') {
+            continue;
+        }
+        cout << k << '=' << v << '\n';
+    }
+    cout << "N=" << nuFreq['N'] << '\n';
+    cout << '\n';
+    cout << fixed << setprecision(4);
+    cout << "Background Frequency:" << '\n';
+    for (const auto& [k, v] : nuPer) {
+        if (k == 'N') {
+            continue;
+        }
+        cout << k << '=' << v << '\n';
+    }
+    cout << '\n';
+    cout << "Count Matrix:" << '\n';
+    for (auto& [k, v] : countMatrix) {
+        cout << k - 10;
+        for (const auto& [n, c] : v) {
+            if (n == 'N') {
+                continue;
+            }
+            cout << ' ' << c;
+        }
+        cout << '\n';
+    }
+    cout << '\n';
+    cout << "Frequency Matrix:" << '\n';
+    for (auto& [k, v] : frequencyMatrix) {
+        cout << k - 10;
+        for (const auto& [n, c] : v) {
+            if (n == 'N') {
+                continue;
+            }
+            cout << ' ' << c;
+        }
+        cout << '\n';
+    }
+    cout << '\n';
+    cout << "Weight Matrix:" << '\n';
+    for (auto& [k, v] : weightMatrix) {
+        cout << k - 10;
+        for (const auto& [n, c] : v) {
+            if (n == 'N') {
+                continue;
+            }
+            cout << ' ' << c;
+        }
+        cout << '\n';
+    }
+    cout << '\n';
+    cout << setprecision(10);
+    cout << "Maximum Score: " << maxScore << '\n';
+    cout << '\n';
+    cout << "Score Histogram CDS:" << '\n';
+    bool printLT = false;
+    for (const auto& [k, v] : cscoreHist) {
+        if (k == numeric_limits<int>::min()) {
+            printLT = true;
+        } else {
+            cout << k << ' ' << v.size() << '\n';
+        }
+    }
+    if (printLT) {
+        cout << "lt-50 " << cscoreHist[numeric_limits<int>::min()].size()
+             << '\n';
+        printLT = false;
+    }
+    cout << '\n';
+    cout << "Score Histogram All:" << '\n';
+    for (const auto& [k, v] : gscoreHist) {
+        if (k == numeric_limits<int>::min()) {
+            printLT = true;
+        } else {
+            cout << k << ' ' << v.size() << '\n';
+        }
+    }
+    if (printLT) {
+        cout << "lt-50 " << gscoreHist[numeric_limits<int>::min()].size()
+             << '\n';
+        printLT = false;
+    }
+    cout << '\n';
+    cout << setprecision(4);
+    cout << "Position List:" << '\n';
+    for (const auto& g : uniqueSites) {
+        cout << g.pos << ' ' << g.strand << ' ' << g.score << '\n';
+    }
+    cout << '\n';
+}
+
+vector<tuple<deque<array<int, 2>>, int>> locRanges(vector<string>& locs) {
+    vector<tuple<deque<array<int, 2>>, int>> lrs;
+    for (string& loc : locs) {
+        if (loc.find('<') != -1 || loc.find('>') != -1) {
+            continue;
+        }
+
+        int rStart = loc.rfind('(') + 1;
+        int rCount = loc.find(')') - rStart;
+        string r = loc.substr(rStart, rCount);
+
+        if (!isdigit(r[0])) {
+            continue;
+        }
+
+        deque<array<int, 2>> ranges;
+        while (r.find(',') != -1) {
+            array<int, 2> startend;
+            startend[0] = stoi(r);
+            r.erase(0, r.find('.') + 2);
+            startend[1] = stoi(r);
+            r.erase(0, r.find(',') + 1);
+            ranges.push_back(startend);
+        }
+        array<int, 2> startend;
+        startend[0] = stoi(r);
+        r.erase(0, r.find('.') + 2);
+        startend[1] = stoi(r);
+        ranges.push_back(startend);
+
+        int strand = 0;
+        if (loc.find("complement") != -1) {
+            strand = 1;
+        }
+
+        tuple<deque<array<int, 2>>, int> curr{ranges, strand};
+        lrs.push_back(curr);
+    }
+    return lrs;
+}
+
+vector<CDSite<string>> locCds(
+    vector<tuple<deque<array<int, 2>>, int>>& rangestrands, string& sequence) {
+    vector<CDSite<string>> cds;
+    for (auto& rangestrand : rangestrands) {
+        deque<array<int, 2>> ranges = get<0>(rangestrand);
+        int strand = get<1>(rangestrand);
+
+        string cd;
+        int pos = 0;
+        array<int, 2> currRange;
+        int offset = 0;
+
+        if (strand == 1) {
+            currRange = ranges.back();
+            pos = currRange[1];
+            for (int i = -10; i < 11; i++) {
+                int currIdx = -1 * currRange[1] + i + offset;
+                if (currIdx > -1 * currRange[0] && ranges.size() > 1) {
+                    ranges.pop_back();
+                    currRange = ranges.back();
+                    offset = -1 * i;
+                    currIdx = -1 * currRange[1] + i + offset;
+                }
+
+                if (-1 * currIdx - 1 < 0 ||
+                    -1 * currIdx - 1 >= sequence.length()) {
+                    continue;
+                }
+                cd += sequence.at(-1 * currIdx - 1);
+            }
+            transform(cd.begin(), cd.end(), cd.begin(), [](char ch) {
+                switch (ch) {
+                    case 'A':
+                        return 'T';
+                    case 'T':
+                        return 'A';
+                    case 'G':
+                        return 'C';
+                    case 'C':
+                        return 'G';
+                }
+                return ch;
+            });
+        } else {
+            currRange = ranges.front();
+            pos = currRange[0];
+            for (int i = -10; i < 11; i++) {
+                int currIdx = currRange[0] + i + offset;
+                if (currIdx > currRange[1] && ranges.size() > 1) {
+                    ranges.pop_front();
+                    currRange = ranges.front();
+                    offset = -1 * i;
+                    currIdx = currRange[0] + i + offset;
+                }
+
+                if (currIdx - 1 < 0 || currIdx - 1 >= sequence.length()) {
+                    continue;
+                }
+                cd += sequence.at(currIdx - 1);
+            }
+        }
+
+        cds.push_back(CDSite<string>{pos, 0, cd, strand});
+    }
+    return cds;
+}
+
+map<char, int> nFreq(string& seq) {
+    map<char, int> nuFreq;
+    int len = seq.length();
+    for (int i = 0; i < len; i++) {
+        char nucleotide = seq[i];
+        switch (nucleotide) {
+            case 'A':
+                nuFreq['A']++;
+                break;
+            case 'T':
+                nuFreq['T']++;
+                break;
+            case 'G':
+                nuFreq['G']++;
+                break;
+            case 'C':
+                nuFreq['C']++;
+                break;
+            case 'N':
+                nuFreq['N']++;
+                break;
+        }
+    }
+    return nuFreq;
+}
+
+map<char, double> nPer(map<char, int>& nuFreq, int total) {
+    map<char, double> nuPer;
+    for (const auto& [k, v] : nuFreq) {
+        nuPer[k] = (double)v / total;
+    }
+    return nuPer;
+}
+
+map<int, map<char, int>> cMatrix(vector<CDSite<string>>& cds) {
+    map<int, map<char, int>> countMatrix;
+    for (CDSite<string>& c : cds) {
+        string& s = c.seq;
+        for (int i = 0; i < s.length(); i++) {
+            countMatrix[i][s.at(i)]++;
+        }
+    }
+    for (auto& [k, v] : countMatrix) {
+        v['A'];
+        v['C'];
+        v['G'];
+        v['T'];
+        v['N'];
+    }
+    return countMatrix;
+}
+
+map<int, map<char, double>> fMatrix(map<int, map<char, int>>& countMatrix) {
+    map<int, map<char, double>> frequencyMatrix;
+    for (auto& [k, v] : countMatrix) {
+        int total = accumulate(v.begin(), v.end(), 0,
+                               [](const int previous, const auto& element) {
+                                   return previous + element.second;
+                               });
+        frequencyMatrix[k] = nPer(v, total);
+    }
+    return frequencyMatrix;
+}
+
+map<int, map<char, double>> wMatrix(
+    map<int, map<char, double>>& frequencyMatrix, map<char, double>& nuPer) {
+    map<int, map<char, double>> weightMatrix;
+    for (auto& [k, v] : frequencyMatrix) {
+        map<char, double> pweightMatrix;
+        for (auto& [n, c] : v) {
+            double per = -99;
+            if (c > 0) {
+                per = log2(c / nuPer[n]);
+            }
+            pweightMatrix[n] = per;
+        }
+        weightMatrix[k] = pweightMatrix;
+    }
+    return weightMatrix;
+}
+
+double mScore(map<int, map<char, double>>& weightMatrix) {
+    double maxScore = 0;
+    for (auto& [k, v] : weightMatrix) {
+        double currMax = 0;
+        for (const auto& [n, c] : v) {
+            if (n == 'N') {
+                continue;
+            }
+            if (c > currMax) {
+                currMax = c;
+            }
+        }
+        maxScore += currMax;
+    }
+    return maxScore;
+}
+
+template <typename T>
+map<int, vector<CDSite<T>>> sHist(vector<T>& stringlikes,
+                                  map<int, map<char, double>>& weightMatrix) {
+    map<int, vector<CDSite<T>>> cscoreHist;
+    for (int i = 0; i < stringlikes.size(); i++) {
+        CDSite<T> currGS = {i + 1 + 10};
+        T& s = stringlikes[i];
+        double currScore = 0;
+        for (int j = 0; j < s.length(); j++) {
+            if (s.at(j) != 'N') {
+                currScore += weightMatrix[j][s.at(j)];
+            }
+        }
+        currGS.seq = s;
+        currGS.score = currScore;
+        int score = (int)floorf(currScore);
+        if (score < -50) {
+            score = numeric_limits<int>::min();
+        }
+        cscoreHist[score].push_back(currGS);
+    }
+    return cscoreHist;
+}
+
+vector<string_view> kmer(string& sequence, int n) {
+    vector<string_view> mer;
+    const char* seq = sequence.data();
+    for (int i = 0; i < sequence.length() - n + 1; i++) {
+        mer.push_back(string_view(seq + i, n));
+    }
+    return mer;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    freopen("output.txt", "w", stdout);
+    // string input = "input/test1.gbff";
+    // string input = "input/test2.gbff";
+    string input = "input/s_pyogenes.gbff";
+    string inputName = input.substr(input.find('/') + 1);
+
+    freopen(input.c_str(), "r", stdin);
+
+    string sequence;
+    vector<string> locs;
+    string currLoc;
+    string line;
+    bool secRec = false;
+    bool locRec = false;
+    while (cin >> line) {
+        if (secRec && line.find_first_of("atcgnATGCN") != -1) {
+            transform(line.begin(), line.end(), line.begin(), ::toupper);
+            sequence += line;
+        } else if (line == "ORIGIN") {
+            secRec = true;
+        } else if (locRec && line.find('/') == 0) {
+            locRec = false;
+            locs.push_back(currLoc);
+            currLoc.clear();
+        } else if (locRec) {
+            currLoc += line;
+        } else if (line == "CDS") {
+            locRec = true;
+        }
+    }
+
+    string revSeq = sequence;
+    reverse(revSeq.begin(), revSeq.end());
+    transform(revSeq.begin(), revSeq.end(), revSeq.begin(), [](char ch) {
+        switch (ch) {
+            case 'A':
+                return 'T';
+            case 'T':
+                return 'A';
+            case 'G':
+                return 'C';
+            case 'C':
+                return 'G';
+        }
+        return ch;
+    });
+
+    // Nucleotide Histogram
+    map<char, int> nuFreq = nFreq(sequence);
+
+    // Background Frequency
+    map<char, int> nunuFreq = nuFreq;
+    map<char, char> rc = {
+        {'A', 'T'}, {'T', 'A'}, {'G', 'C'}, {'C', 'G'}, {'N', 'N'}};
+    for (const auto& [k, v] : nuFreq) {
+        nunuFreq[k] = v + nuFreq[rc[k]];
+    }
+    map<char, double> nuPer =
+        nPer(nunuFreq, 2 * (sequence.length() - nuFreq['N']));
+
+    // Count Matrix
+    vector<tuple<deque<array<int, 2>>, int>> rangestrands = locRanges(locs);
+    vector<CDSite<string>> cds = locCds(rangestrands, sequence);
+    map<int, map<char, int>> countMatrix = cMatrix(cds);
+
+    // Frequency Matrix
+    map<int, map<char, double>> frequencyMatrix = fMatrix(countMatrix);
+
+    // Weight Matrix
+    map<int, map<char, double>> weightMatrix = wMatrix(frequencyMatrix, nuPer);
+
+    // Maximum Score
+    double maxScore = mScore(weightMatrix);
+
+    // Score Histogram CDS
+    vector<string> cdsseqs;
+    for (CDSite<string>& g : cds) {
+        cdsseqs.push_back(g.seq);
+    }
+    map<int, vector<CDSite<string>>> cscoreHist =
+        sHist<string>(cdsseqs, weightMatrix);
+
+    // Score Histogram All
+    vector<string_view> mers = kmer(sequence, 21);
+    map<int, vector<CDSite<string_view>>> gscoreHist =
+        sHist<string_view>(mers, weightMatrix);
+    for (auto& [k, v] : gscoreHist) {
+        for (auto& g : v) {
+            g.strand = 0;
+        }
+    }
+    vector<string_view> revmers = kmer(revSeq, 21);
+    map<int, vector<CDSite<string_view>>> revgscoreHist =
+        sHist<string_view>(revmers, weightMatrix);
+    for (auto& [k, v] : revgscoreHist) {
+        for (auto& g : v) {
+            g.strand = 1;
+            g.pos = sequence.length() + 1 - g.pos;
+        }
+        gscoreHist[k].insert(gscoreHist[k].end(), v.begin(), v.end());
+    }
+
+    // Position List
+    vector<CDSite<string_view>> uniqueSites;
+    for (auto& [k, v] : gscoreHist) {
+        if (k >= 10) {
+            for (auto& g : v) {
+                bool unique = true;
+                for (CDSite<string>& c : cds) {
+                    if (c.pos == g.pos && c.strand == g.strand) {
+                        unique = false;
+                        break;
+                    }
+                }
+                if (unique) {
+                    uniqueSites.push_back(g);
+                }
+            }
+        }
+    }
+    sort(uniqueSites.begin(), uniqueSites.end(),
+         [](auto& ga, auto& gb) { return ga.pos < gb.pos; });
+
+    printData(nuFreq, nuPer, countMatrix, frequencyMatrix, weightMatrix,
+              maxScore, cscoreHist, gscoreHist, uniqueSites);
+
+    return 0;
+}
