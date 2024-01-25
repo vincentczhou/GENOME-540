@@ -1,0 +1,23 @@
+Part 1
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.003s
+
+Part 2
+
+real	0m0.007s
+user	0m0.000s
+sys	0m0.003s
+
+Part 3.1
+
+real	0m6.835s
+user	0m2.308s
+sys	0m0.111s
+
+Part 3.2
+
+real	0m10.519s
+user	0m10.165s
+sys	0m0.236s

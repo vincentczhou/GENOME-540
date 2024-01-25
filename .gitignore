@@ -5,6 +5,8 @@
 
 .vscode
 
+**/input/**
+
 *.fa
 *.fna
 *.gbff

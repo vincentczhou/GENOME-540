@@ -1,0 +1,28 @@
+Input: graph.txt
+Score: 13
+Begin: vii
+End: xiii
+Path: MQ
+
+Input: constraint_graph.txt
+Score: 7
+Begin: i
+End: xiii
+Path: CKP
+
+Fasta: s_pyogenes.fa
+Non-alphabetic characters: 0
+>NZ_LS483338.1 Streptococcus pyogenes strain NCTC12064 chromosome 1, complete sequence
+*=1746380
+A=537381
+C=334523
+G=338691
+T=535785
+N=0
+
+Input: seqgraph.txt
+Score: 13.28
+Begin: 235971
+End: 236001
+Path: GGCGGTGGCGGAGGAGGCGGCGGCGGTGCC
+
