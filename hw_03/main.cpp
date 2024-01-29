@@ -165,6 +165,8 @@ vector<CDSite<string>> locCds(
         array<int, 2> currRange;
         int offset = 0;
 
+        bool valid = true;
+
         if (strand == 1) {
             currRange = ranges.back();
             pos = currRange[1];
@@ -179,7 +181,8 @@ vector<CDSite<string>> locCds(
 
                 if (-1 * currIdx - 1 < 0 ||
                     -1 * currIdx - 1 >= sequence.length()) {
-                    continue;
+                    valid = false;
+                    break;
                 }
                 cd += sequence.at(-1 * currIdx - 1);
             }
@@ -209,13 +212,16 @@ vector<CDSite<string>> locCds(
                 }
 
                 if (currIdx - 1 < 0 || currIdx - 1 >= sequence.length()) {
-                    continue;
+                    valid = false;
+                    break;
                 }
                 cd += sequence.at(currIdx - 1);
             }
         }
 
-        cds.push_back(CDSite<string>{pos, 0, cd, strand});
+        if (valid) {
+            cds.push_back(CDSite<string>{pos, 0, cd, strand});
+        }
     }
     return cds;
 }
