@@ -93,7 +93,7 @@ int main() {
         if (k == next(bgFreq.rend())->first) {
             cout << ">=";
         }
-        cout << k << "={" << v << '}' << '\n';
+        cout << k << '=' << v << '\n';
     }
     cout << '\n';
     cout << "Target frequencies:" << '\n';
@@ -101,7 +101,7 @@ int main() {
         if (k == next(targFreq.rend())->first) {
             cout << ">=";
         }
-        cout << k << "={" << v << '}' << '\n';
+        cout << k << '=' << v << '\n';
     }
     cout << '\n';
     cout << "Scoring scheme:" << '\n';
@@ -109,7 +109,7 @@ int main() {
         if (k == next(score.rend())->first) {
             cout << ">=";
         }
-        cout << k << "={" << v << '}' << '\n';
+        cout << k << '=' << v << '\n';
     }
     cout << '\n';
 
