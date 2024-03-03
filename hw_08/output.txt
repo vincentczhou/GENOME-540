@@ -1,0 +1,29 @@
+Fasta: Pyrococcus_horikoshii.fasta
+>BA000001.2 Pyrococcus horikoshii OT3 DNA, complete genome
+
+Iterations for Convergence:
+272
+
+Log Likelihood:
+-2.35414e+06
+
+Initial State Probabilities:
+1=4.634e-184
+2=1.000e+00
+
+Transition Probabilities:
+1,1=7.430e-01
+1,2=2.570e-01
+2,1=2.597e-01
+2,2=7.403e-01
+
+Emission Probabilities:
+1,A=1.561e-01
+1,C=3.740e-01
+1,G=4.461e-02
+1,T=4.253e-01
+2,A=4.252e-01
+2,C=4.841e-02
+2,G=3.706e-01
+2,T=1.558e-01
+

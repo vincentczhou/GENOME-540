@@ -1,0 +1,257 @@
+Assignment: GS 540 HW8
+Name: Vincent Chau
+Email: vkchau@uw.edu
+Language: C++17
+Runtime: 10m27.234s
+
+Fasta: Pyrococcus_horikoshii.fasta
+>BA000001.2 Pyrococcus horikoshii OT3 DNA, complete genome
+
+Iterations for Convergence:
+272
+
+Log Likelihood:
+-2.35414e+06
+
+Initial State Probabilities:
+1=4.634e-184
+2=1.000e+00
+
+Transition Probabilities:
+1,1=7.430e-01
+1,2=2.570e-01
+2,1=2.597e-01
+2,2=7.403e-01
+
+Emission Probabilities:
+1,A=1.561e-01
+1,C=3.740e-01
+1,G=4.461e-02
+1,T=4.253e-01
+2,A=4.252e-01
+2,C=4.841e-02
+2,G=3.706e-01
+2,T=1.558e-01
+
+Program:
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    freopen("output.txt", "w", stdout);
+    string input = "input/Pyrococcus_horikoshii.fasta";
+    string inputName = input.substr(input.find('/') + 1);
+    freopen(input.c_str(), "r", stdin);
+
+    string header;
+    getline(cin, header, '\n');
+    string sequence;
+    getline(cin, sequence, '\n');
+
+    vector<double> scale(sequence.length());
+    vector<double> forward_1(sequence.length());
+    vector<double> forward_2(sequence.length());
+    vector<double> backward_1(sequence.length());
+    vector<double> backward_2(sequence.length());
+
+    // State 1
+    double init_1 = 0.996;
+    double a_11 = 0.999;
+    double a_12 = 0.001;
+    map<char, double> e_1 = {{'A', 0.3}, {'T', 0.3}, {'G', 0.2}, {'C', 0.2}};
+
+    // State 2
+    double init_2 = 0.004;
+    double a_21 = 0.01;
+    double a_22 = 0.99;
+    map<char, double> e_2 = {
+        {'A', 0.15}, {'T', 0.15}, {'G', 0.35}, {'C', 0.35}};
+
+    // Condition
+    int iterations = 0;
+    double log_p = 0;
+    double new_log_p = 0;
+
+    // Declaration
+    double curr_1 = 0;
+    double curr_2 = 0;
+    double c = 0;
+    double hold_1 = 0;
+    double hold_2 = 0;
+    double num_a_11 = 0;
+    double num_a_12 = 0;
+    double num_a_21 = 0;
+    double num_a_22 = 0;
+    double den_a_11 = 0;
+    double den_a_12 = 0;
+    double den_a_21 = 0;
+    double den_a_22 = 0;
+    double num_e_1_k = 0;
+    double num_e_2_k = 0;
+    double den_e_1_k = 0;
+    double den_e_2_k = 0;
+
+    // Train
+    while (abs(new_log_p - log_p) > 0.1 || iterations == 0) {
+        log_p = new_log_p;
+        iterations++;
+
+        // Forward
+        // Initialization Case
+        // "Transition" and Emission
+        curr_1 = init_1 * e_1.at(sequence.at(0));
+        curr_2 = init_2 * e_2.at(sequence.at(0));
+        // Scaling
+        c = 1 / (curr_1 + curr_2);
+        curr_1 *= c;
+        curr_2 *= c;
+        // DP
+        scale[0] = c;
+        forward_1[0] = curr_1;
+        forward_2[0] = curr_2;
+
+        for (int i = 1; i < sequence.length(); i++) {
+            // Transition
+            curr_1 = (forward_1[i - 1] * a_11) + (forward_2[i - 1] * a_21);
+            curr_2 = (forward_1[i - 1] * a_12) + (forward_2[i - 1] * a_22);
+            // Emission
+            curr_1 *= e_1.at(sequence.at(i));
+            curr_2 *= e_2.at(sequence.at(i));
+            // Scaling
+            c = 1 / (curr_1 + curr_2);
+            curr_1 *= c;
+            curr_2 *= c;
+            // DP
+            scale[i] = c;
+            forward_1[i] = curr_1;
+            forward_2[i] = curr_2;
+        }
+
+        // Backward
+        // Initialization Case
+        // "Transition" and Scaling
+        curr_1 = 1;
+        curr_2 = 1;
+        c = scale[scale.size() - 1];
+        curr_1 *= c;
+        curr_2 *= c;
+        // DP
+        backward_1[sequence.length() - 1] = curr_1;
+        backward_2[sequence.length() - 1] = curr_2;
+
+        hold_1 = 0;
+        hold_2 = 0;
+
+        for (int i = sequence.length() - 2; i >= 0; i--) {
+            // Emission
+            curr_1 = backward_1[i + 1] * e_1.at(sequence.at(i + 1));
+            curr_2 = backward_2[i + 1] * e_2.at(sequence.at(i + 1));
+            hold_1 = curr_1;
+            hold_2 = curr_2;
+            // Transition
+            curr_1 = (hold_1 * a_11) + (hold_2 * a_12);
+            curr_2 = (hold_1 * a_21) + (hold_2 * a_22);
+            // Scaling
+            c = scale[i];
+            curr_1 *= c;
+            curr_2 *= c;
+            // DP
+            backward_1[i] = curr_1;
+            backward_2[i] = curr_2;
+        }
+
+        // Variables
+        // Log P(Observations | Model)
+        new_log_p = -1 * accumulate(scale.begin(), scale.end(), 0.0,
+                                    [](const double a, const double b) {
+                                        return a + log(b);
+                                    });
+        // Init
+        init_1 = forward_1[0] * backward_1[0] / scale[0];
+        init_2 = forward_2[0] * backward_2[0] / scale[0];
+        // Transition
+        num_a_11 = 0;
+        num_a_12 = 0;
+        num_a_21 = 0;
+        num_a_22 = 0;
+        den_a_11 = 0;
+        den_a_12 = 0;
+        den_a_21 = 0;
+        den_a_22 = 0;
+        for (int i = 0; i < sequence.length() - 1; i++) {
+            num_a_11 += forward_1[i] * a_11 * e_1.at(sequence.at(i + 1)) *
+                        backward_1[i + 1];
+            num_a_12 += forward_1[i] * a_12 * e_2.at(sequence.at(i + 1)) *
+                        backward_2[i + 1];
+            num_a_21 += forward_2[i] * a_21 * e_1.at(sequence.at(i + 1)) *
+                        backward_1[i + 1];
+            num_a_22 += forward_2[i] * a_22 * e_2.at(sequence.at(i + 1)) *
+                        backward_2[i + 1];
+            den_a_11 += forward_1[i] * backward_1[i] / scale[i];
+            den_a_12 += forward_1[i] * backward_1[i] / scale[i];
+            den_a_21 += forward_2[i] * backward_2[i] / scale[i];
+            den_a_22 += forward_2[i] * backward_2[i] / scale[i];
+        }
+        a_11 = num_a_11 / den_a_11;
+        a_12 = num_a_12 / den_a_12;
+        a_21 = num_a_21 / den_a_21;
+        a_22 = num_a_22 / den_a_22;
+        // Emission
+        num_e_1_k = 0;
+        num_e_2_k = 0;
+        den_e_1_k = 0;
+        den_e_2_k = 0;
+        for (auto& [k, v] : e_1) {
+            num_e_1_k = 0;
+            num_e_2_k = 0;
+            den_e_1_k = 0;
+            den_e_2_k = 0;
+            for (int i = 0; i < sequence.length(); i++) {
+                if (sequence.at(i) == k) {
+                    num_e_1_k += forward_1[i] * backward_1[i] / scale[i];
+                    num_e_2_k += forward_2[i] * backward_2[i] / scale[i];
+                }
+                den_e_1_k += forward_1[i] * backward_1[i] / scale[i];
+                den_e_2_k += forward_2[i] * backward_2[i] / scale[i];
+            }
+            e_1[k] = num_e_1_k / den_e_1_k;
+            e_2[k] = num_e_2_k / den_e_2_k;
+        }
+    }
+
+    cout << "Fasta: " << inputName << '\n';
+    cout << header << '\n';
+    cout << '\n';
+    cout << "Iterations for Convergence:" << '\n';
+    cout << iterations << '\n';
+    cout << '\n';
+    cout << "Log Likelihood:" << '\n';
+    cout << new_log_p << '\n';
+    cout << '\n';
+    cout << setprecision(3) << scientific;
+    cout << "Initial State Probabilities:" << '\n';
+    cout << "1=" << init_1 << '\n';
+    cout << "2=" << init_2 << '\n';
+    cout << '\n';
+    cout << "Transition Probabilities:" << '\n';
+    cout << "1,1=" << a_11 << '\n';
+    cout << "1,2=" << a_12 << '\n';
+    cout << "2,1=" << a_21 << '\n';
+    cout << "2,2=" << a_22 << '\n';
+    cout << '\n';
+    cout << "Emission Probabilities:" << '\n';
+    for (auto& [k, v] : e_1) {
+        cout << "1," << k << '=' << v << '\n';
+    }
+    for (auto& [k, v] : e_2) {
+        cout << "2," << k << '=' << v << '\n';
+    }
+    cout << '\n';
+
+    return 0;
+}
